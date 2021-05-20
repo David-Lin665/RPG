@@ -32,3 +32,7 @@ write our scripts of the game.
 In this stage, we have just started this programm. There's still so many things which we should learn and discover. If you happen to be a game 
 developer or experts in related fields. Please give us some advices and guidance. Thank you!
 
+如果您想助我們一臂之力，請email到 lin1040055@gmail.com
+if you are willing to help, please send email to lin1040055@gmail.com
+
+
