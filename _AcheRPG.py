@@ -36,7 +36,7 @@ pygame.display.set_caption('New game')
 class Background(pygame.sprite.Sprite):
       def __init__(self):
             super().__init__()
-            self.bgimage = pygame.image.load("game_materials\Background.png")        
+            self.bgimage = pygame.image.load("./Background.png")        
             self.bgY = 0
             self.bgX = 0
  
@@ -47,7 +47,7 @@ class Background(pygame.sprite.Sprite):
 class Ground(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("game_materials\Ground.png")
+        self.image = pygame.image.load("./Ground.png")
         self.rect = self.image.get_rect(center = (350, 350))
  
     def render(self):
@@ -56,7 +56,7 @@ class Ground(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load("game_materials\\adventurer_int.png")
+        self.image = pygame.image.load("./adventurer_int.png")
         self.rect = self.image.get_rect()
         self.jumping = False
         self.running = False
