@@ -34,20 +34,21 @@ pygame.display.set_caption('New game')
 
 #classes setting
 class Background(pygame.sprite.Sprite):
-      def __init__(self):
-            super().__init__()
-            self.bgimage = pygame.image.load("./Background.png")        
-            self.bgY = 0
-            self.bgX = 0
+    def __init__(self):
+        super().__init__()
+        self.bgimage = pygame.image.load("./Background.png")        
+        self.bgY = 0
+        self.bgX = 0
  
-      def render(self):
-            dis.blit(self.bgimage, (self.bgX, self.bgY))     
+    def render(self):
+        dis.blit(self.bgimage, (self.bgX, self.bgY))     
  
  
 class Ground(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("./Ground.png")
+        
         self.rect = self.image.get_rect(center = (350, 350))
  
     def render(self):
@@ -56,7 +57,7 @@ class Ground(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load("./adventurer_int.png")
+        self.image = pygame.image.load("adventurer_int.png")
         self.rect = self.image.get_rect()
         self.jumping = False
         self.running = False
@@ -106,7 +107,7 @@ class Player(pygame.sprite.Sprite):
         # If touching the ground, and not currently jumping, cause the player to jump.
         if hits and not self.jumping:
             self.jumping = True
-            self.vel.y = -12
+            self.vel.y = -10
     def attack(self):
         pass
     def gravity_check(self):
@@ -120,8 +121,38 @@ class Player(pygame.sprite.Sprite):
                     self.jumping = False
  
 class Enemy(pygame.sprite.Sprite):
-      def __init__(self):
+    def __init__(self):
         super().__init__()
+        self.image = pygame.image.load("snake.png")
+        pygame.transform.scale(self.image,(5,5))
+        self.rect = self.image.get_rect()     
+        self.pos = vec(0,0)
+        self.vel = vec(0,0)
+        self.direction = random.randint(0,1) # 0 for Right, 1 for Left
+        self.vel.x = random.randint(2,6) / 2  # Randomized velocity of the generated enemy
+        if self.direction == 0:
+            self.pos.x = 0
+            self.pos.y = 150
+        if self.direction == 1:
+            self.pos.x = 700
+            self.pos.y = 150
+        
+    def move(self):
+        # Causes the enemy to change directions upon reaching the end of screen    
+        if self.pos.x >= (WIDTH-20):
+            self.direction = 1
+        elif self.pos.x <= 0:
+            self.direction = 0
+        if self.direction == 0:
+            self.pos.x += self.vel.x
+        if self.direction == 1:
+            self.pos.x -= self.vel.x
+ 
+        self.rect.center = self.pos
+    def render(self):
+            # Displayed the enemy on screen
+            dis.blit(self.image, (self.pos.x, self.pos.y))
+
 
 #creating object
 
@@ -130,6 +161,8 @@ ground = Ground()
 ground_group = pygame.sprite.Group()
 ground_group.add(ground)
 player = Player()
+enemy = Enemy()
+
 
 #main loop
 
@@ -141,6 +174,8 @@ while run:
     ground.render()
     player.move()
     dis.blit(player.image,player.rect)
+    enemy.render()
+    enemy.move()
     pygame.display.update()
     for event in pygame.event.get():
         if event.type == QUIT:
