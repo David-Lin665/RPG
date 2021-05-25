@@ -20,6 +20,12 @@ to revive your beloved one.
 - upload to steam, google play
 - continue to update and debug
 
+
+## 工作分配
+Team leader: 林子恩<br>
+illustrators: 陳若驊、許育瑋、陳瑋亭<br>
+programmers: 薛綉臻、林智冠、吳克廷
+
 ## About 創作者/Creators
 我們是今年剛從高中畢業的學生，因為嚮往遊戲製作而開始這個計畫，儘管我們對程式和遊戲製作一竅不通，但相信憑著一股傻勁努力往前衝
 終究能闖出我們的一片天，從剛開始接觸python就被其簡潔的指令和功能強大的模組深深吸引住了，因而決定用pygame來撰寫這個遊戲。
