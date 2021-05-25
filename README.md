@@ -24,7 +24,7 @@ to revive your beloved one.
 ## 工作分配
 Team leader: 林子恩<br>
 illustrators: 陳若驊、許育瑋、陳瑋亭<br>
-programmers: 薛綉臻、林智冠、吳克廷
+programmers: 薛綉臻、林智冠、Alec Wu(Advisor)
 
 ## About 創作者/Creators
 我們是今年剛從高中畢業的學生，因為嚮往遊戲製作而開始這個計畫，儘管我們對程式和遊戲製作一竅不通，但相信憑著一股傻勁努力往前衝
