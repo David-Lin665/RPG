@@ -154,46 +154,40 @@ class Enemy(pygame.sprite.Sprite):
             dis.blit(self.image, (self.pos.x, self.pos.y))
 
 
-#creating object
+if __name__ == "__main__":
+    #creating object
 
-background = Background()
-ground = Ground()
-ground_group = pygame.sprite.Group()
-ground_group.add(ground)
-player = Player()
-enemy = Enemy()
+    background = Background()
+    ground = Ground()
+    ground_group = pygame.sprite.Group()
+    ground_group.add(ground)
+    player = Player()
+    enemy = Enemy()
 
 
-#main loop
+    #main loop
 
-run = True
+    run = True
 
-while run:
-    player.gravity_check()
-    background.render()
-    ground.render()
-    player.move()
-    dis.blit(player.image,player.rect)
-    enemy.render()
-    enemy.move()
-    pygame.display.update()
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            run = False
-            pygame.quit()
-            sys.exit()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_w:
-                player.jump()
-            if event.key == pygame.K_ESCAPE:
+    while run:
+        player.gravity_check()
+        background.render()
+        ground.render()
+        player.move()
+        dis.blit(player.image,player.rect)
+        enemy.render()
+        enemy.move()
+        pygame.display.update()
+        for event in pygame.event.get():
+            if event.type == QUIT:
                 run = False
                 pygame.quit()
-                sys.exit()    
-    FPS_CLOCK.tick(FPS)
-
-
-
-
-
-
-
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_w:
+                    player.jump()
+                if event.key == pygame.K_ESCAPE:
+                    run = False
+                    pygame.quit()
+                    sys.exit()    
+        FPS_CLOCK.tick(FPS)
