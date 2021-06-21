@@ -7,13 +7,14 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpforce;
     private Rigidbody2D rb;
-    private bool facingRight = true;
+    private bool facingRight = false;
     private float moveInput;
     private bool isGrounded;
     public Transform groundcheck;
     public float checkRadius;
     public LayerMask whatisGround;
     public int extrajumps;
+    int jumps;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,9 +35,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(isGrounded==true){
-            extrajumps = 2;
+            jumps = extrajumps;
         }
-        if(Input.GetKeyDown(KeyCode.UpArrow)&&extrajumps>0){
+        if(Input.GetKeyDown(KeyCode.UpArrow)&&jumps>0){
             rb.velocity = Vector2.up*jumpforce;
             extrajumps--;
         }
