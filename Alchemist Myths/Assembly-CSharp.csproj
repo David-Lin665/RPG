@@ -39,11 +39,11 @@
      <Compile Include="Assets\scripts\ManaBar.cs" />
      <Compile Include="Assets\scripts\CC.cs" />
      <Compile Include="Assets\scripts\HealthBar.cs" />
-     <Compile Include="Assets\scripts\DistructibleTilemap.cs" />
      <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\PlayerAttack.cs" />
      <Compile Include="Assets\scripts\HealthAndMana.cs" />
      <Compile Include="Assets\scripts\CharacterController2D.cs" />
+     <Compile Include="Assets\scripts\DestructibleTilemap.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
