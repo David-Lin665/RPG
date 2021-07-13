@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
         if(isGrounded==true){
             jumps = extrajumps;
         }
-        if(Input.GetKeyDown(KeyCode.Space)&&jumps>0){
+        if(Input.GetKeyDown(KeyCode.UpArrow)&&jumps>0){
             rb.velocity = Vector2.up*jumpforce;
-            jumps--;
+            extrajumps--;
         }
     }
 
